@@ -75,8 +75,25 @@
 
 /* Mobile Screens (768px and below) */
 @media (max-width: 768px) {
+    /* Touch-friendly sizing */
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
     nav {
         padding: 1rem;
+        position: fixed;
+        z-index: 1000;
+        width: 100%;
+        backdrop-filter: blur(10px);
     }
 
     nav > div:nth-child(2) {
@@ -85,18 +102,58 @@
 
     .hamburger {
         display: flex;
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .hamburger span {
+        width: 24px;
     }
 
     nav .text-2xl {
         font-size: 1.5rem;
     }
 
+    /* Mobile menu improvements */
+    .mobile-menu {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(15, 15, 15, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 999;
+        flex-direction: column;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .mobile-menu.active {
+        max-height: 400px;
+    }
+
+    .mobile-menu a {
+        padding: 16px 1.5rem;
+        border-bottom: 1px solid rgba(242, 242, 242, 0.05);
+        touch-action: manipulation;
+    }
+
+    .mobile-menu a:active {
+        background: rgba(212, 197, 169, 0.1);
+    }
+
     h1 {
         font-size: 2rem;
+        line-height: 1.2;
     }
 
     h2 {
         font-size: 1.5rem;
+        line-height: 1.3;
     }
 
     h3 {
@@ -107,8 +164,29 @@
         font-size: 1.1rem;
     }
 
+    p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
     section {
         padding: 60px 1rem;
+        margin-top: 20px;
+    }
+
+    /* Hero section mobile */
+    .hero {
+        padding-top: 100px;
+        padding-bottom: 40px;
+        min-height: auto;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .scroll-indicator {
+        display: none;
     }
 
     .about {
@@ -118,14 +196,29 @@
 
     .about-image {
         height: 300px;
+        border-radius: 8px;
+    }
+
+    .about-content {
+        padding: 20px;
+    }
+
+    .about-text {
+        line-height: 1.7;
     }
 
     .services-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .service-card {
         padding: 25px;
+        touch-action: manipulation;
+    }
+
+    .service-card:active {
+        transform: translateY(-2px);
     }
 
     .service-number {
@@ -159,17 +252,26 @@
 
     .team-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
+    }
+
+    .team-card {
+        padding: 25px;
+        text-align: center;
     }
 
     .team-image {
-        width: 150px;
-        height: 150px;
+        width: 140px;
+        height: 140px;
         margin: 0 auto 15px;
     }
 
     .team-card h4 {
         font-size: 1.2rem;
+    }
+
+    .team-role {
+        font-size: 0.85rem;
     }
 
     .timeline-content {
@@ -181,59 +283,108 @@
     }
 
     .testimonial-slide {
-        padding: 25px;
+        padding: 30px 20px;
+        min-height: 250px;
     }
 
     .testimonial-text {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+    }
+
+    .testimonial-quote::before {
+        font-size: 2rem;
     }
 
     .carousel-nav {
         margin-top: 25px;
-        gap: 10px;
+        gap: 12px;
     }
 
     .carousel-dot {
-        width: 10px;
-        height: 10px;
+        width: 12px;
+        height: 12px;
+        cursor: pointer;
+        min-width: 12px;
+        min-height: 12px;
     }
 
     .faq-container {
         max-width: 100%;
     }
 
+    .faq-item {
+        margin-bottom: 1rem;
+    }
+
     .faq-question {
-        padding: 15px;
-        flex-direction: column;
-        align-items: flex-start;
+        padding: 18px;
+        flex-direction: row;
+        align-items: center;
+        cursor: pointer;
+        min-height: 50px;
+        touch-action: manipulation;
     }
 
-    .faq-toggle {
-        margin-top: 10px;
-        margin-left: 0;
+    .faq-question:active {
+        background: rgba(212, 197, 169, 0.05);
     }
 
-    .faq-answer-content {
-        padding: 15px;
+    .faq-question h3 {
+        font-size: 1.05rem;
+        flex: 1;
+        text-align: left;
+    }
+
+    .toggle {
+        font-size: 1.5rem;
+        flex-shrink: 0;
+    }
+
+    .faq-answer {
+        padding: 18px;
+        border-top: 1px solid rgba(212, 197, 169, 0.1);
+    }
+
+    .faq-answer p {
+        margin: 0;
     }
 
     .newsletter-box {
-        padding: 30px;
+        padding: 30px 20px;
         margin: 0 auto 40px;
+        border-radius: 8px;
     }
 
     .newsletter-box h3 {
         font-size: 1.4rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .newsletter-box p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
     }
 
     .newsletter-form {
         flex-direction: column;
+        gap: 1rem;
     }
 
-    .newsletter-form input,
+    .newsletter-form input {
+        padding: 16px;
+        font-size: 1rem;
+        min-height: 44px;
+        width: 100%;
+    }
+
     .newsletter-btn {
-        padding: 14px 20px;
-        font-size: 0.9rem;
+        padding: 16px;
+        font-size: 1rem;
+        min-height: 44px;
+        width: 100%;
+        touch-action: manipulation;
     }
 
     .trust-badges {
@@ -255,20 +406,61 @@
         margin-bottom: 2rem;
     }
 
+    .cta-button {
+        padding: 16px 32px;
+        font-size: 0.95rem;
+        min-height: 44px;
+        min-width: 44px;
+        width: 100%;
+        max-width: 100%;
+        touch-action: manipulation;
+    }
+
+    .cta-button:active {
+        transform: scale(0.98);
+    }
+
+    /* Form improvements for mobile */
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
     .form-group label {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
     }
 
     .form-group input,
     .form-group select,
     .form-group textarea {
-        padding: 14px 16px;
-        font-size: 0.95rem;
+        padding: 16px;
+        font-size: 1rem;
+        min-height: 44px;
+        width: 100%;
+        border-radius: 8px;
+        -webkit-appearance: none;
+        appearance: none;
+        background-clip: padding-box;
     }
 
-    .cta-button {
-        padding: 14px 36px;
-        font-size: 0.85rem;
+    .form-group input[type="email"],
+    .form-group input[type="text"],
+    .form-group input[type="tel"] {
+        font-size: 16px;
+    }
+
+    .form-group select {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23D4C5A9' d='M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        padding-right: 36px;
+    }
+
+    .form-group textarea {
+        min-height: 120px;
+        resize: vertical;
+        font-family: 'Inter', sans-serif;
     }
 
     .scroll-indicator {
@@ -276,11 +468,18 @@
     }
 
     .back-to-top {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-        bottom: 20px;
+        width: 48px;
+        height: 48px;
+        font-size: 1.5rem;
+        bottom: 30px;
         right: 20px;
+        min-width: 48px;
+        min-height: 48px;
+        touch-action: manipulation;
+    }
+
+    .back-to-top:active {
+        transform: scale(0.9);
     }
 
     footer {
