@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Rise by Rice - Get in touch to discuss your digital authority project.">
+    <meta name="theme-color" content="#0F0F0F">
+    <title>Contact Us - Rise by Rice</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="text-2xl font-bold" style="font-family: 'Syne', sans-serif; letter-spacing: -0.02em;">
+            <span style="color: var(--champagne);">RISE</span> by Rice
+        </div>
+        <div>
+            <a href="../index.html">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../pages/portfolio.html">Portfolio</a>
+            <a href="../index.html#team">Team</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../pages/portfolio.html">Portfolio</a>
+        <a href="../index.html#team">Team</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero" style="padding-bottom: 60px;">
+        <div class="hero-content">
+            <h1>Let's Build Something Great</h1>
+            <p class="hero-subtitle">Got a project in mind? We'd love to hear from you. Reach out and let's discuss how we can elevate your digital presence.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="fade-in-up" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; padding: 80px 2rem; max-width: 1200px; margin: 0 auto;">
+        
+        <!-- Contact Info -->
+        <div>
+            <h2 style="margin-bottom: 2rem;">Get in Touch</h2>
+            
+            <div style="margin-bottom: 3rem;">
+                <h3 style="color: var(--champagne); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px;">Email</h3>
+                <p><a href="mailto:hello@risebyrice.com" style="color: var(--champagne); text-decoration: none; font-size: 1.1rem;">hello@risebyrice.com</a></p>
+            </div>
+
+            <div style="margin-bottom: 3rem;">
+                <h3 style="color: var(--champagne); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px;">Phone</h3>
+                <p><a href="tel:+1234567890" style="color: var(--champagne); text-decoration: none; font-size: 1.1rem;">+1 (234) 567-8900</a></p>
+            </div>
+
+            <div style="margin-bottom: 3rem;">
+                <h3 style="color: var(--champagne); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px;">Location</h3>
+                <p style="line-height: 1.8;">
+                    123 Business Avenue<br>
+                    Digital District, NY 10001<br>
+                    United States
+                </p>
+            </div>
+
+            <div style="margin-bottom: 3rem;">
+                <h3 style="color: var(--champagne); margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px;">Response Time</h3>
+                <p>We typically respond within 24 hours during business days (Monday-Friday, 9AM-6PM EST).</p>
+            </div>
+
+            <div style="display: flex; gap: 1rem;">
+                <a href="#" style="color: var(--champagne); text-decoration: none; font-size: 1rem; transition: opacity 0.3s;">LinkedIn</a>
+                <span style="color: rgba(242, 242, 242, 0.3);">•</span>
+                <a href="#" style="color: var(--champagne); text-decoration: none; font-size: 1rem; transition: opacity 0.3s;">Twitter</a>
+                <span style="color: rgba(242, 242, 242, 0.3);">•</span>
+                <a href="#" style="color: var(--champagne); text-decoration: none; font-size: 1rem; transition: opacity 0.3s;">Instagram</a>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div style="background: rgba(45, 45, 45, 0.3); padding: 2.5rem; border-radius: 8px; border: 1px solid rgba(212, 197, 169, 0.1);">
+            <form id="contactForm" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company" placeholder="Your company name">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890">
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Service Interest *</label>
+                    <select id="service" name="service" required style="width: 100%; padding: 0.75rem; background: transparent; border: 1px solid rgba(242, 242, 242, 0.1); border-radius: 4px; color: var(--chalk); font-size: 1rem; cursor: pointer;">
+                        <option value="">Select a service</option>
+                        <option value="strategy">Business Strategy</option>
+                        <option value="branding">Brand Development</option>
+                        <option value="content">Content Authority</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Budget Range</label>
+                    <select id="budget" name="budget" style="width: 100%; padding: 0.75rem; background: transparent; border: 1px solid rgba(242, 242, 242, 0.1); border-radius: 4px; color: var(--chalk); font-size: 1rem; cursor: pointer;">
+                        <option value="">Select budget range</option>
+                        <option value="under25k">Under $25,000</option>
+                        <option value="25k-50k">$25,000 - $50,000</option>
+                        <option value="50k-100k">$50,000 - $100,000</option>
+                        <option value="100k+">$100,000+</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Project Details *</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your project, goals, and timeline..." rows="6" required></textarea>
+                    <span class="error-message"></span>
+                </div>
+
+                <button type="submit" class="cta-button" style="margin-top: 1rem;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="fade-in-up" style="padding: 80px 2rem;">
+        <div class="section-title">FREQUENTLY ASKED QUESTIONS</div>
+        <div class="divider"></div>
+
+        <div class="faq-container" style="max-width: 800px; margin: 0 auto;">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How do we get started?</h3>
+                    <span class="toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Simply fill out the contact form or give us a call. We'll schedule an initial consultation to understand your goals, timeline, and requirements. From there, we'll propose a tailored approach and timeline.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What are your typical project timelines?</h3>
+                    <span class="toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Project duration varies based on scope and complexity. Strategy projects typically take 4-8 weeks, branding projects 8-12 weeks, and digital platforms 12-24 weeks. We'll provide a detailed timeline during your consultation.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do you work with startups and established companies?</h3>
+                    <span class="toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! We work with organizations at every stage—from ambitious startups establishing authority to Fortune 500 companies modernizing their digital presence. Our approach is customized to your unique needs and market position.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What industries do you specialize in?</h3>
+                    <span class="toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We've worked across 30+ industries including SaaS, E-commerce, Finance, Healthcare, Technology, Professional Services, Wellness, and more. Our diverse experience allows us to bring best practices and innovative thinking to any sector.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Will you handle ongoing support post-launch?</h3>
+                    <span class="toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! We offer flexible ongoing support packages including content management, analytics monitoring, optimization, and maintenance. Many of our clients benefit from continuous partnership as their business evolves.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How do you measure project success?</h3>
+                    <span class="toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We establish clear KPIs and metrics at the project start. Success is measured across business goals (revenue, leads, conversions), brand metrics (awareness, perception), and technical metrics (performance, engagement). We provide regular reporting and optimization recommendations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="fade-in-up" style="text-align: center; padding: 80px 2rem; background: rgba(45, 45, 45, 0.2);">
+        <h2 style="margin-bottom: 1rem;">Ready to Build Your Authority?</h2>
+        <p style="font-size: 1.1rem; color: rgba(242, 242, 242, 0.7); margin-bottom: 2rem;">
+            Let's start a conversation about your vision and how we can help you achieve it.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Rise by Rice. Authority Architects. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <!-- Back to Top -->
+    <div class="back-to-top" id="backToTop">
+        ↑
+    </div>
+
+    <!-- JS Files -->
+    <script src="../js/analytics.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

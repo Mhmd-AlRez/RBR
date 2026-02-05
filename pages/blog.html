@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rise by Rice Blog - Insights on digital authority, branding, strategy, and digital marketing.">
+    <meta name="theme-color" content="#0F0F0F">
+    <title>Blog - Rise by Rice</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Custom Blog Styles -->
+    <style>
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 40px 0;
+        }
+
+        .blog-card {
+            background: rgba(45, 45, 45, 0.3);
+            border: 1px solid rgba(212, 197, 169, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            border-color: rgba(212, 197, 169, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, rgba(212, 197, 169, 0.1), rgba(212, 197, 169, 0.05));
+            overflow: hidden;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--champagne);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .blog-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-tag {
+            background: rgba(212, 197, 169, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+        }
+
+        .blog-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: rgba(242, 242, 242, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(212, 197, 169, 0.1);
+            font-size: 0.9rem;
+        }
+
+        .read-more {
+            color: var(--champagne);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .read-more:hover {
+            opacity: 0.8;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .author-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--champagne);
+        }
+
+        .filter-section {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-button {
+            padding: 0.5rem 1.5rem;
+            background: transparent;
+            border: 1px solid rgba(212, 197, 169, 0.3);
+            color: var(--chalk);
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .filter-button.active {
+            background: var(--champagne);
+            color: var(--obsidian);
+            border-color: var(--champagne);
+        }
+
+        .filter-button:hover {
+            border-color: var(--champagne);
+        }
+
+        @media (max-width: 1024px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-section {
+                flex-direction: column;
+            }
+
+            .filter-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="text-2xl font-bold" style="font-family: 'Syne', sans-serif; letter-spacing: -0.02em;">
+            <span style="color: var(--champagne);">RISE</span> by Rice
+        </div>
+        <div>
+            <a href="../index.html">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../pages/portfolio.html">Portfolio</a>
+            <a href="../pages/contact.html">Contact</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../pages/portfolio.html">Portfolio</a>
+        <a href="../pages/contact.html">Contact</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero" style="padding-bottom: 60px;">
+        <div class="hero-content">
+            <h1>Authority Insights</h1>
+            <p class="hero-subtitle">Expert perspectives on building digital authority, brand strategy, content excellence, and digital marketing.</p>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="fade-in-up" style="padding: 80px 2rem;">
+        <div class="section-title">LATEST ARTICLES</div>
+        <div class="divider"></div>
+
+        <!-- Filter Section -->
+        <div class="filter-section" style="justify-content: center;">
+            <button class="filter-button active" onclick="filterBlog('all')">All Articles</button>
+            <button class="filter-button" onclick="filterBlog('strategy')">Strategy</button>
+            <button class="filter-button" onclick="filterBlog('branding')">Branding</button>
+            <button class="filter-button" onclick="filterBlog('marketing')">Marketing</button>
+            <button class="filter-button" onclick="filterBlog('content')">Content</button>
+        </div>
+
+        <!-- Blog Grid -->
+        <div class="blog-grid">
+            <!-- Article 1 -->
+            <div class="blog-card" data-category="strategy">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1460925895917-adf4e566c39d?w=600&q=80" alt="Strategy">
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-tag">Strategy</span>
+                        <span style="margin-left: auto;">March 15, 2024</span>
+                    </div>
+                    <h3 class="blog-title">The Authority Benchmark: Building Digital Credibility in Crowded Markets</h3>
+                    <p class="blog-excerpt">Discover the proven framework for establishing authentic authority. Learn how market leaders differentiate and build lasting credibility.</p>
+                    <div class="blog-footer">
+                        <a href="#" class="read-more">Read Article →</a>
+                        <div class="author-info">
+                            <div class="author-avatar"></div>
+                            <span style="font-size: 0.85rem;">Sarah Chen</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="blog-card" data-category="branding">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80" alt="Branding">
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-tag">Branding</span>
+                        <span style="margin-left: auto;">March 10, 2024</span>
+                    </div>
+                    <h3 class="blog-title">Visual Identity Matters: Why Design is Your First Authority Statement</h3>
+                    <p class="blog-excerpt">Exceptional design doesn't just look good—it communicates value, builds trust, and establishes authority at first glance.</p>
+                    <div class="blog-footer">
+                        <a href="#" class="read-more">Read Article →</a>
+                        <div class="author-info">
+                            <div class="author-avatar"></div>
+                            <span style="font-size: 0.85rem;">Marcus Rice</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 3 -->
+            <div class="blog-card" data-category="content">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" alt="Content">
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-tag">Content</span>
+                        <span style="margin-left: auto;">March 5, 2024</span>
+                    </div>
+                    <h3 class="blog-title">Content Authority: From Creator to Industry Voice</h3>
+                    <p class="blog-excerpt">Learn how strategic content transforms your brand from a voice in the crowd to the voice your market listens to.</p>
+                    <div class="blog-footer">
+                        <a href="#" class="read-more">Read Article →</a>
+                        <div class="author-info">
+                            <div class="author-avatar"></div>
+                            <span style="font-size: 0.85rem;">Alex Kim</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 4 -->
+            <div class="blog-card" data-category="marketing">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f70d504d0?w=600&q=80" alt="Marketing">
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-tag">Marketing</span>
+                        <span style="margin-left: auto;">March 1, 2024</span>
+                    </div>
+                    <h3 class="blog-title">The Authority Advantage: Why Market Leaders Win Through Thought Leadership</h3>
+                    <p class="blog-excerpt">Explore how thought leadership drives customer acquisition, premium pricing, and sustainable competitive advantage.</p>
+                    <div class="blog-footer">
+                        <a href="#" class="read-more">Read Article →</a>
+                        <div class="author-info">
+                            <div class="author-avatar"></div>
+                            <span style="font-size: 0.85rem;">Jessica Park</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 5 -->
+            <div class="blog-card" data-category="strategy">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80" alt="Strategy">
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-tag">Strategy</span>
+                        <span style="margin-left: auto;">February 25, 2024</span>
+                    </div>
+                    <h3 class="blog-title">Market Positioning 101: Carving Your Niche in Oversaturated Spaces</h3>
+                    <p class="blog-excerpt">A practical guide to identifying your unique value proposition and communicating it clearly to your target market.</p>
+                    <div class="blog-footer">
+                        <a href="#" class="read-more">Read Article →</a>
+                        <div class="author-info">
+                            <div class="author-avatar"></div>
+                            <span style="font-size: 0.85rem;">David Zhang</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 6 -->
+            <div class="blog-card" data-category="content">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80" alt="Content">
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-tag">Content</span>
+                        <span style="margin-left: auto;">February 20, 2024</span>
+                    </div>
+                    <h3 class="blog-title">Content Distribution Strategies That Actually Work</h3>
+                    <p class="blog-excerpt">Great content means nothing if nobody sees it. Learn the distribution strategies top performers use to amplify reach.</p>
+                    <div class="blog-footer">
+                        <a href="#" class="read-more">Read Article →</a>
+                        <div class="author-info">
+                            <div class="author-avatar"></div>
+                            <span style="font-size: 0.85rem;">Emily Rodriguez</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="fade-in-up" style="background: rgba(45, 45, 45, 0.2); padding: 80px 2rem;">
+        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <h2 style="margin-bottom: 1rem;">Stay Authority Informed</h2>
+            <p style="color: rgba(242, 242, 242, 0.7); margin-bottom: 2rem;">
+                Get weekly insights delivered to your inbox. Unsubscribe anytime.
+            </p>
+            <form id="newsletterForm" style="display: flex; gap: 0.5rem;">
+                <input type="email" id="newsEmail" name="email" placeholder="your@email.com" required style="flex: 1; padding: 0.75rem 1rem; background: transparent; border: 1px solid rgba(212, 197, 169, 0.3); border-radius: 4px; color: var(--chalk); font-size: 1rem;">
+                <button type="submit" class="cta-button" style="padding: 0.75rem 2rem;">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="fade-in-up" style="text-align: center; padding: 80px 2rem;">
+        <h2 style="margin-bottom: 1.5rem;">Ready to Build Your Authority Story?</h2>
+        <p style="font-size: 1.15rem; color: rgba(242, 242, 242, 0.7); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Contact our team to discuss how we can help you establish digital authority and drive meaningful business results.
+        </p>
+        <a href="../pages/contact.html" class="cta-button">Get in Touch</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Rise by Rice. Authority Architects. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <!-- Back to Top -->
+    <div class="back-to-top" id="backToTop">
+        ↑
+    </div>
+
+    <!-- Blog Filter Script -->
+    <script>
+        function filterBlog(category) {
+            const cards = document.querySelectorAll('.blog-card');
+            const buttons = document.querySelectorAll('.filter-button');
+
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter cards
+            if (category === 'all') {
+                cards.forEach(card => card.style.display = 'block');
+            } else {
+                cards.forEach(card => {
+                    if (card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+        }
+    </script>
+
+    <!-- JS Files -->
+    <script src="../js/analytics.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

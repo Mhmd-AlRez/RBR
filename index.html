@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rise by Rice - Premium Digital Authority Architecture. Strategy, Production, Systems.">
+    <meta name="theme-color" content="#0F0F0F">
+    <title>Rise by Rice - Authority Architects</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="text-2xl font-bold" style="font-family: 'Syne', sans-serif; letter-spacing: -0.02em;">
+            <span style="color: var(--champagne);">RISE</span> by Rice
+        </div>
+        <div>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="pages/portfolio.html">Portfolio</a>
+            <a href="pages/blog.html">Blog</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="pages/portfolio.html">Portfolio</a>
+        <a href="pages/blog.html">Blog</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>WE BUILD AUTHORITY</h1>
+            <p class="hero-subtitle">Transforming visions into digital experiences that command attention. Strategy, craft, and precision—every project an architecture of excellence.</p>
+            <a href="#contact" class="cta-button">Start Your Project</a>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 5v14M5 12l7 7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="fade-in-up">
+        <div class="section-title">PROVEN RESULTS</div>
+        <div class="divider"></div>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3 id="stat1">0</h3>
+                <p>Projects Delivered</p>
+            </div>
+            <div class="stat-item">
+                <h3 id="stat2">0</h3>
+                <p>Global Clients</p>
+            </div>
+            <div class="stat-item">
+                <h3 id="stat3">0</h3>
+                <p>Years of Excellence</p>
+            </div>
+            <div class="stat-item">
+                <h3 id="stat4">0</h3>
+                <p>Average ROI Increase</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="fade-in-up">
+        <div class="section-title">WHO WE ARE</div>
+        <div class="divider"></div>
+        <div class="about">
+            <div class="about-content">
+                <h2>The Architects of Digital Authority</h2>
+                <p class="about-text">
+                    We are a collective of strategists, designers, and technologists dedicated to building digital presence that transcends the ordinary. Each project is an opportunity to architect something timeless.
+                </p>
+                <p class="about-text">
+                    Our philosophy: strategy without design is chaos. Design without systems is fragile. We integrate all three into every engagement.
+                </p>
+                <a href="#contact" class="cta-button">Let's Collaborate</a>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" alt="Team workspace with focused lighting">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services fade-in-up">
+        <div class="section-title">OUR SERVICES</div>
+        <div class="divider"></div>
+        <h2 style="margin-bottom: 2rem; background: linear-gradient(135deg, var(--chalk) 0%, var(--champagne) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Three Pillars of Excellence</h2>
+
+        <div class="services-grid">
+            <div class="service-card fade-in-up">
+                <div class="service-number">01</div>
+                <h3>Strategy</h3>
+                <p>Deep research, competitive analysis, and market positioning. We architect your digital presence from the ground up, ensuring every touchpoint reflects your authority.</p>
+            </div>
+
+            <div class="service-card fade-in-up">
+                <div class="service-number">02</div>
+                <h3>Production</h3>
+                <p>Flawless design and development. From pixel-perfect interfaces to seamless interactions, we craft experiences that captivate and convert.</p>
+            </div>
+
+            <div class="service-card fade-in-up">
+                <div class="service-number">03</div>
+                <h3>Systems</h3>
+                <p>Scalable infrastructure and processes. We build technical foundations that grow with your ambition, ensuring performance and reliability at every scale.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="portfolio" class="fade-in-up">
+        <div class="section-title">CASE STUDIES</div>
+        <div class="divider"></div>
+        <h2 style="margin-bottom: 2rem; background: linear-gradient(135deg, var(--chalk) 0%, var(--champagne) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Recent Work</h2>
+
+        <div class="case-studies-grid">
+            <div class="case-study fade-in-up">
+                <div class="case-study-image">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80" alt="Digital Agency Project">
+                </div>
+                <div class="case-study-content">
+                    <div class="case-study-category">Web Design</div>
+                    <h4>Tech Startup Rebrand</h4>
+                    <p>Complete digital overhaul for a SaaS platform, resulting in a 45% increase in user engagement and improved conversion rates.</p>
+                    <div class="case-study-results">
+                        <span>↑ 45% Traffic</span>
+                        <span>↑ 62% Conversion</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study fade-in-up">
+                <div class="case-study-image">
+                    <img src="https://images.unsplash.com/photo-1553531088-d8b19f0f2c25?w=600&q=80" alt="E-commerce Platform">
+                </div>
+                <div class="case-study-content">
+                    <div class="case-study-category">E-Commerce</div>
+                    <h4>Luxury Brand Platform</h4>
+                    <p>Premium e-commerce experience for high-end fashion retailer, launching with 30% higher average transaction value.</p>
+                    <div class="case-study-results">
+                        <span>↑ 30% AOV</span>
+                        <span>↑ 156% Sessions</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study fade-in-up">
+                <div class="case-study-image">
+                    <img src="https://images.unsplash.com/photo-1460925895917-adf4e566c39d?w=600&q=80" alt="Digital Marketing">
+                </div>
+                <div class="case-study-content">
+                    <div class="case-study-category">Digital Strategy</div>
+                    <h4>B2B Growth Campaign</h4>
+                    <p>Comprehensive digital strategy and execution for enterprise client, achieving record-breaking lead generation numbers.</p>
+                    <div class="case-study-results">
+                        <span>↑ 320% Leads</span>
+                        <span>↓ 48% CAC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="fade-in-up">
+        <div class="section-title">OUR TEAM</div>
+        <div class="divider"></div>
+        <h2 style="margin-bottom: 0; background: linear-gradient(135deg, var(--chalk) 0%, var(--champagne) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Meet the Architects</h2>
+
+        <div class="team-grid">
+            <div class="team-card fade-in-up">
+                <div class="team-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" alt="Team member">
+                </div>
+                <h4>Alexandra Chen</h4>
+                <div class="team-role">Creative Director</div>
+                <p style="font-size: 0.95rem; color: rgba(242, 242, 242, 0.6);">10+ years designing authority brands</p>
+            </div>
+
+            <div class="team-card fade-in-up">
+                <div class="team-image">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&q=80" alt="Team member">
+                </div>
+                <h4>Marcus Johnson</h4>
+                <div class="team-role">Technical Lead</div>
+                <p style="font-size: 0.95rem; color: rgba(242, 242, 242, 0.6);">Full-stack architect, scaling systems</p>
+            </div>
+
+            <div class="team-card fade-in-up">
+                <div class="team-image">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&q=80" alt="Team member">
+                </div>
+                <h4>Sara Williams</h4>
+                <div class="team-role">Strategy Consultant</div>
+                <p style="font-size: 0.95rem; color: rgba(242, 242, 242, 0.6);">Brand strategy & market positioning</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Timeline -->
+    <section class="fade-in-up">
+        <div class="section-title">OUR PROCESS</div>
+        <div class="divider"></div>
+        <h2 style="margin-bottom: 2rem; background: linear-gradient(135deg, var(--chalk) 0%, var(--champagne) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">How We Work</h2>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-checkbox"></div>
+                <div class="timeline-content">
+                    <div class="timeline-num">Phase 01</div>
+                    <h4>Discovery & Strategy</h4>
+                    <p>We immerse ourselves in your vision, market, and competitive landscape. Through comprehensive research and strategic planning, we establish the foundation for excellence.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-checkbox"></div>
+                <div class="timeline-content">
+                    <div class="timeline-num">Phase 02</div>
+                    <h4>Design & Development</h4>
+                    <p>Our designers and developers collaborate seamlessly to create pixel-perfect interfaces backed by robust technical architecture. Every detail serves your mission.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-checkbox"></div>
+                <div class="timeline-content">
+                    <div class="timeline-num">Phase 03</div>
+                    <h4>Launch & Optimization</h4>
+                    <p>Precision deployment followed by continuous optimization. We monitor performance metrics, refine user experiences, and ensure your digital authority grows consistently.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-checkbox"></div>
+                <div class="timeline-content">
+                    <div class="timeline-num">Phase 04</div>
+                    <h4>Scale & Support</h4>
+                    <p>Your success is our ongoing commitment. We provide sustained support, strategic guidance, and technical excellence as your business scales to new heights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="fade-in-up">
+        <div class="section-title">CLIENT VOICES</div>
+        <div class="divider"></div>
+        <h2 style="margin-bottom: 0; background: linear-gradient(135deg, var(--chalk) 0%, var(--champagne) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">What Clients Say</h2>
+
+        <div class="testimonials-carousel">
+            <div class="testimonial-slide active">
+                <p class="testimonial-text">"Rise by Rice didn't just build our website—they architected our entire digital presence. The results have been transformative."</p>
+                <div class="testimonial-author">Emma Rodriguez</div>
+                <div class="testimonial-role">CEO, TechFlow Solutions</div>
+            </div>
+
+            <div class="testimonial-slide">
+                <p class="testimonial-text">"Working with their team was a masterclass in strategic thinking. They understood our vision and delivered beyond expectations."</p>
+                <div class="testimonial-author">James Peterson</div>
+                <div class="testimonial-role">Founder, Luxe Collective</div>
+            </div>
+
+            <div class="testimonial-slide">
+                <p class="testimonial-text">"The level of attention to detail was exceptional. From strategy to execution, every decision was purposeful and data-driven."</p>
+                <div class="testimonial-author">Lisa Chang</div>
+                <div class="testimonial-role">CMO, Global Ventures Inc.</div>
+            </div>
+        </div>
+
+        <div class="carousel-nav">
+            <div class="carousel-dot active" onclick="goToSlide(0)"></div>
+            <div class="carousel-dot" onclick="goToSlide(1)"></div>
+            <div class="carousel-dot" onclick="goToSlide(2)"></div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="fade-in-up">
+        <div class="section-title">FREQUENTLY ASKED</div>
+        <div class="divider"></div>
+        <h2 style="text-align: center; margin-bottom: 2rem; background: linear-gradient(135deg, var(--chalk) 0%, var(--champagne) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Questions Answered</h2>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What's your typical project timeline?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Most projects take 3-6 months from discovery to launch, depending on scope and complexity. We prioritize quality over speed, but we're exceptionally efficient with our process. Complex enterprise solutions may take longer and are scoped individually.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you work with startups or only enterprise clients?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        We work with ambitious organizations at any stage. The common factor is a commitment to excellence and strategic thinking. Whether you're a founding team with a vision or an established enterprise scaling, we're here to elevate your digital authority.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How do you measure project success?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        We establish KPIs during the discovery phase aligned with your business goals. Success might mean increased revenue, user engagement, brand perception, or market position. We track these metrics rigorously and adjust strategy accordingly throughout the engagement.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What's your approach to ongoing support?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Launch is the beginning, not the end. We offer tiered support packages including monitoring, maintenance, updates, and strategic guidance. Many clients become long-term partners as we continue optimizing and scaling their digital presence.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How do you price your services?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        We approach pricing strategically based on project scope, complexity, and your budget parameters. We offer flexibility across project-based, retainer, and hybrid models. Let's discuss what makes sense for your situation in an initial consultation.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="fade-in-up">
+        <div class="newsletter-box">
+            <h3>Stay in the Loop</h3>
+            <p style="color: rgba(242, 242, 242, 0.7);">Insights on digital strategy, design trends, and building authority in your industry.</p>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" id="newsEmail" placeholder="your@email.com" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+
+        <div class="trust-badges">
+            <div class="trust-badge">
+                <div class="trust-badge-icon">🔒</div>
+                <span>SSL Encrypted</span>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-badge-icon">✓</div>
+                <span>GDPR Compliant</span>
+            </div>
+            <div class="trust-badge">
+                <div class="trust-badge-icon">★</div>
+                <span>Award Winning</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact fade-in-up">
+        <div class="section-title">LET'S TALK</div>
+        <div class="divider" style="margin-left: auto; margin-right: auto;"></div>
+        <h2>Ready to Build Something Extraordinary?</h2>
+        <p class="contact-subtitle">Share your vision. We'll craft the strategy. Together, we'll build the future.</p>
+
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+                <div class="error-message">Please enter your name</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                <div class="error-message">Please enter a valid email</div>
+            </div>
+
+            <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" placeholder="Your company name">
+            </div>
+
+            <div class="form-group">
+                <label for="budget">Project Budget *</label>
+                <select id="budget" name="budget" required>
+                    <option value="">Select budget range</option>
+                    <option value="10k-25k">$10K - $25K</option>
+                    <option value="25k-50k">$25K - $50K</option>
+                    <option value="50k-100k">$50K - $100K</option>
+                    <option value="100k+">$100K+</option>
+                </select>
+                <div class="error-message">Please select a budget range</div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Tell Us About Your Project *</label>
+                <textarea id="message" name="message" placeholder="What's your vision?" rows="5" required></textarea>
+                <div class="error-message">Please describe your project</div>
+            </div>
+
+            <button type="submit" class="cta-button form-submit">Submit Inquiry</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Rise by Rice. Authority Architects. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        ↑
+    </div>
+
+    <!-- JS Files -->
+    <script src="js/analytics.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

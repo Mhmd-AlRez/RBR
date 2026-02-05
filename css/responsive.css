@@ -1,0 +1,480 @@
+/* Tablet & Medium Screens (1024px and below) */
+@media (max-width: 1024px) {
+    nav {
+        padding: 1rem 1.5rem;
+    }
+
+    nav > div:nth-child(2) {
+        gap: 2rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 80px 1.5rem;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .case-studies-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    .timeline::before {
+        display: none;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    .timeline-item:nth-child(odd) {
+        text-align: left;
+    }
+
+    .timeline-content {
+        padding-left: 50px;
+    }
+
+    .timeline-checkbox {
+        left: 0;
+        transform: translateX(-75%);
+    }
+
+    .hero {
+        padding-top: 80px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.15rem;
+    }
+}
+
+/* Mobile Screens (768px and below) */
+@media (max-width: 768px) {
+    nav {
+        padding: 1rem;
+    }
+
+    nav > div:nth-child(2) {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    nav .text-2xl {
+        font-size: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    h4 {
+        font-size: 1.1rem;
+    }
+
+    section {
+        padding: 60px 1rem;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-image {
+        height: 300px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: 25px;
+    }
+
+    .service-number {
+        font-size: 2.5rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .stat-item {
+        padding: 20px;
+    }
+
+    .stat-item h3 {
+        font-size: 2rem;
+    }
+
+    .case-studies-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .case-study-image {
+        height: 250px;
+    }
+
+    .case-study-content {
+        padding: 20px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .team-image {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 15px;
+    }
+
+    .team-card h4 {
+        font-size: 1.2rem;
+    }
+
+    .timeline-content {
+        padding-left: 30px;
+    }
+
+    .testimonials-carousel {
+        min-height: auto;
+    }
+
+    .testimonial-slide {
+        padding: 25px;
+    }
+
+    .testimonial-text {
+        font-size: 1.1rem;
+    }
+
+    .carousel-nav {
+        margin-top: 25px;
+        gap: 10px;
+    }
+
+    .carousel-dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .faq-container {
+        max-width: 100%;
+    }
+
+    .faq-question {
+        padding: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .faq-toggle {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+
+    .faq-answer-content {
+        padding: 15px;
+    }
+
+    .newsletter-box {
+        padding: 30px;
+        margin: 0 auto 40px;
+    }
+
+    .newsletter-box h3 {
+        font-size: 1.4rem;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form input,
+    .newsletter-btn {
+        padding: 14px 20px;
+        font-size: 0.9rem;
+    }
+
+    .trust-badges {
+        flex-direction: column;
+        gap: 15px;
+        row-gap: 15px;
+    }
+
+    .contact-form {
+        max-width: 100%;
+    }
+
+    .contact h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .form-group label {
+        font-size: 0.85rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 14px 16px;
+        font-size: 0.95rem;
+    }
+
+    .cta-button {
+        padding: 14px 36px;
+        font-size: 0.85rem;
+    }
+
+    .scroll-indicator {
+        bottom: 20px;
+    }
+
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    footer {
+        padding: 40px 1rem;
+        font-size: 0.9rem;
+    }
+
+    .divider {
+        width: 40px;
+    }
+
+    .section-title {
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+    }
+}
+
+/* Small Mobile Screens (480px and below) */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+
+    nav {
+        padding: 0.75rem 0.5rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 1.15rem;
+    }
+
+    section {
+        padding: 50px 0.75rem;
+    }
+
+    .hero {
+        padding-top: 70px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    .cta-button {
+        padding: 12px 28px;
+        font-size: 0.8rem;
+        width: 100%;
+    }
+
+    .service-card {
+        padding: 20px;
+    }
+
+    .service-number {
+        font-size: 2rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .service-card p {
+        font-size: 0.95rem;
+    }
+
+    .stat-item h3 {
+        font-size: 1.8rem;
+    }
+
+    .stat-item p {
+        font-size: 0.9rem;
+    }
+
+    .case-study-content {
+        padding: 15px;
+    }
+
+    .case-study h4 {
+        font-size: 1.1rem;
+    }
+
+    .case-study p {
+        font-size: 0.95rem;
+    }
+
+    .team-image {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 12px;
+    }
+
+    .team-card p {
+        font-size: 0.9rem;
+    }
+
+    .timeline-content h4 {
+        font-size: 1.1rem;
+    }
+
+    .timeline-content p {
+        font-size: 0.95rem;
+    }
+
+    .testimonial-text {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .testimonial-author {
+        font-size: 1rem;
+    }
+
+    .testimonial-role {
+        font-size: 0.85rem;
+    }
+
+    .faq-question span:first-child {
+        font-size: 1rem;
+    }
+
+    .faq-toggle {
+        font-size: 1.3rem;
+    }
+
+    .newsletter-box {
+        padding: 20px;
+        margin: 0 auto 30px;
+    }
+
+    .newsletter-box h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .newsletter-box p {
+        font-size: 0.9rem;
+    }
+
+    .newsletter-form input,
+    .newsletter-btn {
+        padding: 12px 16px;
+        font-size: 0.85rem;
+    }
+
+    .trust-badge {
+        font-size: 0.9rem;
+    }
+
+    .trust-badge-icon {
+        font-size: 1.2rem;
+    }
+
+    .form-group label {
+        font-size: 0.8rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px 14px;
+        font-size: 0.9rem;
+    }
+
+    .error-message {
+        font-size: 0.75rem;
+    }
+
+    .back-to-top {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    footer {
+        padding: 30px 0.75rem;
+        font-size: 0.85rem;
+    }
+}
