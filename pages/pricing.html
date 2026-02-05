@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pricing - Rise by Rice - Transparent pricing for digital authority services.">
+    <meta name="theme-color" content="#0F0F0F">
+    <title>Pricing - Rise by Rice</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/theme-toggle.css">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Theme Script -->
+    <script>
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+    </script>
+
+    <style>
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .pricing-card {
+            background: rgba(45, 45, 45, 0.3);
+            border: 2px solid rgba(212, 197, 169, 0.1);
+            border-radius: 8px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card:hover {
+            border-color: var(--champagne);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 197, 169, 0.1);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--champagne);
+            box-shadow: 0 10px 30px rgba(212, 197, 169, 0.15);
+            transform: scale(1.05);
+        }
+
+        .pricing-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--champagne);
+        }
+
+        .pricing-description {
+            font-size: 0.95rem;
+            color: rgba(242, 242, 242, 0.7);
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .pricing-period {
+            font-size: 0.9rem;
+            color: rgba(242, 242, 242, 0.6);
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(212, 197, 169, 0.1);
+            font-size: 0.95rem;
+        }
+
+        .pricing-features li::before {
+            content: "✓ ";
+            color: var(--champagne);
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-cta {
+            width: 100%;
+            padding: 1rem;
+            background: var(--champagne);
+            color: var(--obsidian);
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .pricing-cta:hover {
+            opacity: 0.9;
+        }
+
+        .pricing-badge {
+            display: inline-block;
+            background: var(--champagne);
+            color: var(--obsidian);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .faq-pricing {
+            max-width: 800px;
+            margin: 0 auto;
+            margin-top: 80px;
+        }
+
+        @media (max-width: 1024px) {
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .pricing-amount {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="text-2xl font-bold" style="font-family: 'Syne', sans-serif; letter-spacing: -0.02em;">
+            <span style="color: var(--champagne);">RISE</span> by Rice
+        </div>
+        <div>
+            <a href="../index.html">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="resources.html">Resources</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+            <button class="theme-toggle" id="themeToggle" title="Toggle theme">🌙</button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#services">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="resources.html">Resources</a>
+        <a href="../index.html#contact">Contact</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero" style="padding-bottom: 60px;">
+        <div class="hero-content">
+            <h1>Simple, Transparent Pricing</h1>
+            <p class="hero-subtitle">Choose the perfect plan for your authority journey. No hidden fees, no surprises.</p>
+        </div>
+    </section>
+
+    <!-- Pricing Plans -->
+    <section class="fade-in-up" style="padding: 80px 2rem;">
+        <div class="section-title">INVESTMENT OPTIONS</div>
+        <div class="divider"></div>
+
+        <div class="pricing-grid">
+            <!-- Starter Plan -->
+            <div class="pricing-card">
+                <div class="pricing-title">Starter</div>
+                <p class="pricing-description">Perfect for emerging brands</p>
+                <div class="pricing-amount">$15K</div>
+                <p class="pricing-period">Project-based</p>
+                <ul class="pricing-features">
+                    <li>Brand Strategy Workshop</li>
+                    <li>Logo & Visual Identity</li>
+                    <li>Basic Website (5 pages)</li>
+                    <li>Content Guidelines</li>
+                    <li>1 Month Support</li>
+                </ul>
+                <button class="pricing-cta">Get Started</button>
+            </div>
+
+            <!-- Professional Plan -->
+            <div class="pricing-card featured">
+                <div class="pricing-badge">Most Popular</div>
+                <div class="pricing-title">Professional</div>
+                <p class="pricing-description">For growing businesses</p>
+                <div class="pricing-amount">$35K</div>
+                <p class="pricing-period">Project-based</p>
+                <ul class="pricing-features">
+                    <li>Complete Brand Architecture</li>
+                    <li>Website (10+ pages)</li>
+                    <li>Content Production</li>
+                    <li>SEO Optimization</li>
+                    <li>3 Months Support</li>
+                    <li>Analytics Setup</li>
+                </ul>
+                <button class="pricing-cta">Get Started</button>
+            </div>
+
+            <!-- Enterprise Plan -->
+            <div class="pricing-card">
+                <div class="pricing-title">Enterprise</div>
+                <p class="pricing-description">For industry leaders</p>
+                <div class="pricing-amount">Custom</div>
+                <p class="pricing-period">Tailored</p>
+                <ul class="pricing-features">
+                    <li>Full Digital Strategy</li>
+                    <li>Complete Ecosystem</li>
+                    <li>Ongoing Management</li>
+                    <li>Advanced Analytics</li>
+                    <li>Dedicated Support</li>
+                </ul>
+                <button class="pricing-cta">Let's Talk</button>
+            </div>
+        </div>
+
+        <!-- Pricing FAQ -->
+        <div class="faq-pricing fade-in-up">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Pricing Questions?</h2>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I customize a plan?</h3>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! These are starting points. We tailor every project to your unique needs and budget.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer payment plans?</h3>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes. We offer 50% upfront, remainder at completion. Custom payment structures available for enterprise projects.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What's included in support?</h3>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Support includes revisions, guidance, and technical assistance. Extended support packages available beyond project completion.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What about ongoing management?</h3>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer monthly retainer services starting at $3K/month for content production, analytics, and optimization.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="fade-in-up" style="text-align: center; padding: 80px 2rem; background: rgba(45, 45, 45, 0.2);">
+        <h2 style="margin-bottom: 1.5rem;">Ready to Invest in Your Authority?</h2>
+        <p style="font-size: 1.15rem; color: rgba(242, 242, 242, 0.7); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Schedule a consultation to discuss your project, timeline, and investment.
+        </p>
+        <a href="../index.html#contact" class="cta-button">Schedule Consultation</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Rise by Rice. Authority Architects. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <!-- Back to Top -->
+    <div class="back-to-top" id="backToTop">
+        ↑
+    </div>
+
+    <!-- JS Files -->
+    <script src="../js/analytics.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/theme-toggle.js"></script>
+</body>
+
+</html>

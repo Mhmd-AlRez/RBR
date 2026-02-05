@@ -15,10 +15,17 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/theme-toggle.css">
 
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Theme Script -->
+    <script>
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+    </script>
 
     <!-- Custom Blog Styles -->
     <style>
@@ -163,6 +170,44 @@
             border-color: var(--champagne);
         }
 
+        .social-share {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(212, 197, 169, 0.1);
+        }
+
+        .social-share span {
+            font-size: 0.85rem;
+            color: rgba(242, 242, 242, 0.6);
+            display: flex;
+            align-items: center;
+            margin-right: 0.5rem;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(212, 197, 169, 0.1);
+            border: 1px solid rgba(212, 197, 169, 0.2);
+            color: var(--champagne);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .share-btn:hover {
+            background: var(--champagne);
+            color: var(--obsidian);
+            transform: scale(1.1);
+        }
+
         @media (max-width: 1024px) {
             .blog-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -194,21 +239,28 @@
         <div>
             <a href="../index.html">Home</a>
             <a href="../index.html#services">Services</a>
-            <a href="../pages/portfolio.html">Portfolio</a>
-            <a href="../pages/contact.html">Contact</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="resources.html">Resources</a>
+            <a href="../index.html#contact">Contact</a>
         </div>
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+            <button class="theme-toggle" id="themeToggle" title="Toggle theme">🌙</button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
     <div class="mobile-menu" id="mobileMenu">
         <a href="../index.html">Home</a>
         <a href="../index.html#services">Services</a>
-        <a href="../pages/portfolio.html">Portfolio</a>
-        <a href="../pages/contact.html">Contact</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="resources.html">Resources</a>
+        <a href="../index.html#contact">Contact</a>
     </div>
 
     <!-- Hero -->
@@ -254,6 +306,12 @@
                             <span style="font-size: 0.85rem;">Sarah Chen</span>
                         </div>
                     </div>
+                    <div class="social-share">
+                        <span>Share:</span>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://risebyrice.com/blog" target="_blank" class="share-btn" title="Share on LinkedIn">in</a>
+                        <a href="https://twitter.com/intent/tweet?url=https://risebyrice.com/blog&text=The Authority Benchmark" target="_blank" class="share-btn" title="Share on Twitter">𝕏</a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://risebyrice.com/blog" target="_blank" class="share-btn" title="Share on Facebook">f</a>
+                    </div>
                 </div>
             </div>
 
@@ -275,6 +333,13 @@
                             <div class="author-avatar"></div>
                             <span style="font-size: 0.85rem;">Marcus Rice</span>
                         </div>
+                    </div>
+                    <div class="social-share">
+                        <span>Share:</span>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://risebyrice.com/blog" target="_blank" class="share-btn" title="Share on LinkedIn">in</a>
+                        <a href="https://twitter.com/intent/tweet?url=https://risebyrice.com/blog&text=Visual Identity Matters" target="_blank" class="share-btn" title="Share on Twitter">𝕏</a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://risebyrice.com/blog" target="_blank" class="share-btn" title="Share on Facebook">f</a>
+                    </div>
                     </div>
                 </div>
             </div>

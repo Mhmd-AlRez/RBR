@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Resources - Rise by Rice - Download guides, templates, and tools for digital authority.">
+    <meta name="theme-color" content="#0F0F0F">
+    <title>Free Resources - Rise by Rice</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/theme-toggle.css">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Theme Script -->
+    <script>
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+    </script>
+
+    <style>
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .resource-card {
+            background: rgba(45, 45, 45, 0.3);
+            border: 1px solid rgba(212, 197, 169, 0.1);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .resource-card:hover {
+            border-color: var(--champagne);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 197, 169, 0.1);
+        }
+
+        .resource-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .resource-type {
+            color: var(--champagne);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .resource-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .resource-description {
+            color: rgba(242, 242, 242, 0.7);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .resource-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: rgba(242, 242, 242, 0.5);
+            padding-top: 1rem;
+            border-top: 1px solid rgba(212, 197, 169, 0.1);
+            margin-bottom: 1rem;
+        }
+
+        .download-btn {
+            background: var(--champagne);
+            color: var(--obsidian);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+        }
+
+        .download-btn:hover {
+            opacity: 0.9;
+        }
+
+        .email-signup {
+            background: rgba(212, 197, 169, 0.1);
+            border: 1px solid var(--champagne);
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 500px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .email-signup h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .email-signup p {
+            color: rgba(242, 242, 242, 0.7);
+            margin-bottom: 1.5rem;
+        }
+
+        .email-form {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .email-form input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            background: transparent;
+            border: 1px solid var(--champagne);
+            border-radius: 4px;
+            color: var(--chalk);
+        }
+
+        .email-form button {
+            padding: 0.75rem 1.5rem;
+            background: var(--champagne);
+            color: var(--obsidian);
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .featured-banner {
+            background: linear-gradient(135deg, rgba(212, 197, 169, 0.1), rgba(212, 197, 169, 0.05));
+            border-left: 4px solid var(--champagne);
+            padding: 2rem;
+            margin: 60px 0;
+            border-radius: 4px;
+        }
+
+        .featured-banner h3 {
+            color: var(--champagne);
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .resource-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .email-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="text-2xl font-bold" style="font-family: 'Syne', sans-serif; letter-spacing: -0.02em;">
+            <span style="color: var(--champagne);">RISE</span> by Rice
+        </div>
+        <div>
+            <a href="../index.html">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+            <button class="theme-toggle" id="themeToggle" title="Toggle theme">🌙</button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#services">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="../index.html#contact">Contact</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero" style="padding-bottom: 60px;">
+        <div class="hero-content">
+            <h1>Free Resources</h1>
+            <p class="hero-subtitle">Exclusive guides, templates, and tools to jumpstart your digital authority journey.</p>
+        </div>
+    </section>
+
+    <!-- Email Signup Banner -->
+    <div class="email-signup fade-in-up">
+        <h3>Get New Resources via Email</h3>
+        <p>Join 500+ professionals receiving weekly authority insights</p>
+        <form class="email-form" id="resourcesNewsletterForm">
+            <input type="email" name="email" placeholder="your@email.com" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
+    <!-- Resources Section -->
+    <section class="fade-in-up" style="padding: 80px 2rem;">
+        <div class="section-title">DOWNLOADABLE RESOURCES</div>
+        <div class="divider"></div>
+
+        <div class="resource-grid">
+            <!-- Digital Authority Checklist -->
+            <div class="resource-card">
+                <div class="resource-icon">📋</div>
+                <div class="resource-type">Checklist</div>
+                <h3 class="resource-title">Digital Authority Checklist</h3>
+                <p class="resource-description">
+                    A comprehensive 25-item checklist to assess your current digital authority status and identify gaps.
+                </p>
+                <div class="resource-meta">
+                    <span>2 pages</span>
+                    <span>PDF</span>
+                </div>
+                <a href="#" class="download-btn">Download Free</a>
+            </div>
+
+            <!-- Brand Strategy Template -->
+            <div class="resource-card">
+                <div class="resource-icon">🎯</div>
+                <div class="resource-type">Template</div>
+                <h3 class="resource-title">Brand Strategy Template</h3>
+                <p class="resource-description">
+                    Step-by-step brand strategy workbook with worksheets for positioning, messaging, and visual identity.
+                </p>
+                <div class="resource-meta">
+                    <span>15 pages</span>
+                    <span>PDF/Google Docs</span>
+                </div>
+                <a href="#" class="download-btn">Download Free</a>
+            </div>
+
+            <!-- Content Calendar Template -->
+            <div class="resource-card">
+                <div class="resource-icon">📅</div>
+                <div class="resource-type">Template</div>
+                <h3 class="resource-title">Content Calendar (Excel)</h3>
+                <p class="resource-description">
+                    Ready-made content planning spreadsheet with category tags, scheduling, and performance tracking.
+                </p>
+                <div class="resource-meta">
+                    <span>Spreadsheet</span>
+                    <span>Excel/Sheets</span>
+                </div>
+                <a href="#" class="download-btn">Download Free</a>
+            </div>
+
+            <!-- SEO Audit Guide -->
+            <div class="resource-card">
+                <div class="resource-icon">🔍</div>
+                <div class="resource-type">Guide</div>
+                <h3 class="resource-title">DIY SEO Audit Guide</h3>
+                <p class="resource-description">
+                    Learn how to conduct a complete SEO audit of your website. Includes checklist and optimization recommendations.
+                </p>
+                <div class="resource-meta">
+                    <span>8 pages</span>
+                    <span>PDF</span>
+                </div>
+                <a href="#" class="download-btn">Download Free</a>
+            </div>
+
+            <!-- Website Copy Templates -->
+            <div class="resource-card">
+                <div class="resource-icon">✍️</div>
+                <div class="resource-type">Template</div>
+                <h3 class="resource-title">Website Copy Templates</h3>
+                <p class="resource-description">
+                    Pre-written templates for hero sections, CTAs, about pages, and service descriptions. Customize for your brand.
+                </p>
+                <div class="resource-meta">
+                    <span>12 pages</span>
+                    <span>Google Docs</span>
+                </div>
+                <a href="#" class="download-btn">Download Free</a>
+            </div>
+
+            <!-- Social Media Strategy -->
+            <div class="resource-card">
+                <div class="resource-icon">📱</div>
+                <div class="resource-type">Guide</div>
+                <h3 class="resource-title">Social Media Strategy Framework</h3>
+                <p class="resource-description">
+                    Build a winning social strategy with platform selection, posting schedules, and engagement tactics.
+                </p>
+                <div class="resource-meta">
+                    <span>10 pages</span>
+                    <span>PDF</span>
+                </div>
+                <a href="#" class="download-btn">Download Free</a>
+            </div>
+        </div>
+
+        <!-- Featured Resource -->
+        <div class="featured-banner fade-in-up">
+            <h3>🎁 Exclusive: Digital Authority Blueprint</h3>
+            <p style="margin-bottom: 1rem;">
+                Our complete framework for building lasting digital authority—valued at $500. Get it free when you book a consultation this month.
+            </p>
+            <a href="../index.html#contact" class="cta-button" style="display: inline-block; width: auto;">Schedule Consultation</a>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="fade-in-up" style="text-align: center; padding: 80px 2rem; background: rgba(45, 45, 45, 0.2);">
+        <h2 style="margin-bottom: 1.5rem;">Take the Next Step</h2>
+        <p style="font-size: 1.15rem; color: rgba(242, 242, 242, 0.7); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Get access to all resources plus personalized implementation guidance from our team.
+        </p>
+        <a href="../index.html#contact" class="cta-button">Get Expert Guidance</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Rise by Rice. Authority Architects. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <!-- Back to Top -->
+    <div class="back-to-top" id="backToTop">
+        ↑
+    </div>
+
+    <!-- JS Files -->
+    <script src="../js/analytics.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/theme-toggle.js"></script>
+</body>
+
+</html>

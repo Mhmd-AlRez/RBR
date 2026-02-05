@@ -20,6 +20,63 @@ body {
     line-height: 1.6;
 }
 
+/* Sticky CTA Bar */
+.sticky-cta-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, rgba(212, 197, 169, 0.95), rgba(212, 197, 169, 0.9));
+    color: var(--obsidian);
+    padding: 12px 2rem;
+    z-index: 998;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.sticky-cta-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.sticky-cta-link, .sticky-cta-close {
+    background: transparent;
+    border: none;
+    color: var(--obsidian);
+    cursor: pointer;
+    font-weight: 700;
+    padding: 0;
+    transition: opacity 0.3s;
+    text-decoration: none;
+}
+
+.sticky-cta-link:hover {
+    opacity: 0.8;
+}
+
+.sticky-cta-close {
+    position: absolute;
+    right: 2rem;
+    font-size: 1.5rem;
+    padding: 0 0.5rem;
+}
+
+.sticky-cta-close:hover {
+    opacity: 0.6;
+}
+
+html {
+    padding-top: 50px;
+}
+
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Syne', sans-serif;
@@ -605,6 +662,13 @@ section {
     margin: 2rem auto 0;
     position: relative;
     min-height: 300px;
+}
+
+.star-rating {
+    color: var(--champagne);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
 }
 
 .testimonial-slide {
